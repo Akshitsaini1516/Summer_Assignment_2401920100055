@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+class Box {
+
+    double length;
+    double breadth;
+
+    Box(double length, double breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
+
+    double area() {
+        return length * breadth;
+    }
+}
+
+class Box3D extends Box {
+
+    double height;
+
+    Box3D(double length, double breadth, double height) {
+        super(length, breadth);
+        this.height = height;
+    }
+
+    double volume() {
+        return length * breadth * height;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Length: ");
+        double l = sc.nextDouble();
+
+        System.out.print("Enter Breadth: ");
+        double b = sc.nextDouble();
+
+        System.out.print("Enter Height: ");
+        double h = sc.nextDouble();
+
+        Box box = new Box(l, b);
+        System.out.println("Area = " + box.area());
+
+        Box3D box3d = new Box3D(l, b, h);
+        System.out.println("Volume = " + box3d.volume());
+    }
+}
